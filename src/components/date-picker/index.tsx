@@ -177,13 +177,27 @@ function DatePicker({
 
         {/* Weekday Description */}
         <div className='grid grid-cols-7 text-center'>
-          <div className='font-medium text-xs text-gray-600 py-2'>S</div>
-          <div className='font-medium text-xs text-gray-600 py-2'>M</div>
-          <div className='font-medium text-xs text-gray-600 py-2'>T</div>
-          <div className='font-medium text-xs text-gray-600 py-2'>W</div>
-          <div className='font-medium text-xs text-gray-600 py-2'>T</div>
-          <div className='font-medium text-xs text-gray-600 py-2'>F</div>
-          <div className='font-medium text-xs text-gray-600 py-2'>S</div>
+          <div className='font-medium text-xs text-secondary-foreground py-2'>
+            S
+          </div>
+          <div className='font-medium text-xs text-secondary-foreground py-2'>
+            M
+          </div>
+          <div className='font-medium text-xs text-secondary-foreground py-2'>
+            T
+          </div>
+          <div className='font-medium text-xs text-secondary-foreground py-2'>
+            W
+          </div>
+          <div className='font-medium text-xs text-secondary-foreground py-2'>
+            T
+          </div>
+          <div className='font-medium text-xs text-secondary-foreground py-2'>
+            F
+          </div>
+          <div className='font-medium text-xs text-secondary-foreground py-2'>
+            S
+          </div>
         </div>
 
         {/* Day picker */}
@@ -197,21 +211,21 @@ function DatePicker({
                   w-8 h-8 rounded-full text-sm relative
                   ${
                     isDaySelected(dayData, dateRange)
-                      ? 'bg-blue-600 text-white hover:bg-blue-700'
+                      ? 'bg-primary text-white hover:bg-primary'
                       : isDayInRange(dayData, dateRange)
-                      ? 'bg-blue-100 text-blue-700 hover:bg-blue-200'
-                      : 'hover:bg-gray-100'
+                      ? 'bg-secondary text-primary hover:bg-primary/20'
+                      : 'hover:bg-primary/10'
                   }
                   ${
                     isToday(dayData) &&
                     !isDaySelected(dayData, dateRange) &&
                     !isDayInRange(dayData, dateRange)
-                      ? 'bg-blue-50 text-blue-600 border border-blue-300'
+                      ? 'bg-secondary text-primary border border-primary/50'
                       : ''
                   }
                   ${
                     !dayData.isCurrentMonth
-                      ? 'text-gray-400 hover:bg-gray-50'
+                      ? 'text-muted-foreground hover:bg-gray-50'
                       : ''
                   }
                 `}
