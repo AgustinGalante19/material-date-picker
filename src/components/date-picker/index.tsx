@@ -19,7 +19,12 @@ import {
   isToday,
 } from './utils';
 
-function DatePicker({ isOpen, onOpenChange, defaultValue }: DatePickerProps) {
+function DatePicker({
+  isOpen,
+  onOpenChange,
+  onSubmit,
+  defaultValue,
+}: DatePickerProps) {
   const [dateRange, setDateRange] = useState<DateRange>(
     defaultValue || {
       from: undefined,
@@ -235,7 +240,7 @@ function DatePicker({ isOpen, onOpenChange, defaultValue }: DatePickerProps) {
           <Button variant={'ghost'} onClick={() => onOpenChange(false)}>
             Cancel
           </Button>
-          <Button variant={'ghost'} onClick={() => console.log(dateRange)}>
+          <Button variant={'ghost'} onClick={() => onSubmit(dateRange)}>
             OK
           </Button>
         </div>

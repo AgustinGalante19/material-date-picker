@@ -1,6 +1,7 @@
 export interface DatePickerProps {
   isOpen: boolean;
   onOpenChange: (isOpen: boolean) => void;
+  onSubmit: (range: DateRange) => void;
   defaultValue?: DateRange;
 }
 

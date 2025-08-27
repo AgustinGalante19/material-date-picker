@@ -13,6 +13,10 @@ function App() {
     to: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // Una semana después
   };
 
+  const onSubmit = (range: DateRange) => {
+    console.log({ range });
+  };
+
   return (
     <div className='p-8'>
       <div className='space-y-4'>
@@ -41,6 +45,7 @@ function App() {
       <DatePicker
         isOpen={isOpenWithoutDefault}
         onOpenChange={setIsOpenWithoutDefault}
+        onSubmit={onSubmit}
       />
 
       {/* DatePicker con valor por defecto */}
@@ -48,6 +53,7 @@ function App() {
         isOpen={isOpenWithDefault}
         onOpenChange={setIsOpenWithDefault}
         defaultValue={defaultDateRange}
+        onSubmit={onSubmit}
       />
     </div>
   );

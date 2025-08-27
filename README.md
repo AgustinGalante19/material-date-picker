@@ -54,11 +54,12 @@ function App() {
 
 ## Props
 
-| Prop           | Tipo                        | Requerido | Descripción                                |
-| -------------- | --------------------------- | --------- | ------------------------------------------ |
-| `isOpen`       | `boolean`                   | ✅        | Controla si el modal está abierto          |
-| `onOpenChange` | `(isOpen: boolean) => void` | ✅        | Callback cuando cambia el estado del modal |
-| `defaultValue` | `DateRange`                 | ❌        | Valor inicial del rango de fechas          |
+| Prop           | Tipo                         | Requerido | Descripción                                                |
+| -------------- | ---------------------------- | --------- | ---------------------------------------------------------- |
+| `isOpen`       | `boolean`                    | ✅        | Controla si el modal está abierto                          |
+| `onOpenChange` | `(isOpen: boolean) => void`  | ✅        | Callback cuando cambia el estado del modal                 |
+| `onSubmit`     | `(range: DateRange) => void` | ✅        | Callback que se ejecuta al confirmar el rango seleccionado |
+| `defaultValue` | `DateRange`                  | ❌        | Valor inicial del rango de fechas                          |
 
 ## Tipos
 
@@ -71,6 +72,7 @@ interface DateRange {
 interface DatePickerProps {
   isOpen: boolean;
   onOpenChange: (isOpen: boolean) => void;
+  onSubmit: (range: DateRange) => void;
   defaultValue?: DateRange;
 }
 ```
